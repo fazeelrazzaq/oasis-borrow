@@ -20,10 +20,10 @@ import { useAppContext } from 'components/AppContextProvider'
 import { LedgerAccountSelection } from 'components/connectWallet/LedgerAccountSelection'
 import { TrezorAccountSelection } from 'components/connectWallet/TrezorAccountSelection'
 import { AppLink } from 'components/Links'
-import { getCustomNetworkParameter } from 'helpers/getCustomNetworkParameter'
 import { dsrLink } from 'components/productCards/ProductCardEarnDsr'
 import { redirectState$ } from 'features/router/redirectState'
 import { AppSpinner } from 'helpers/AppSpinner'
+import { getCustomNetworkParameter } from 'helpers/getCustomNetworkParameter'
 import { useObservable } from 'helpers/observableHook'
 import { WithChildren } from 'helpers/types'
 import { useRedirect } from 'helpers/useRedirect'
@@ -393,10 +393,10 @@ export function ConnectWallet() {
         }
 
         if (url !== undefined) {
-          replace(url)
+          replace(`${url}`, getCustomNetworkParameter())
           redirectState$.next(undefined)
         } else {
-          replace(`/owner/${web3Context.account}`)
+          replace(`/owner/${web3Context.account}`, getCustomNetworkParameter())
         }
       }
     })
@@ -622,7 +622,7 @@ export function WithConnection({ children }: WithChildren) {
     if (web3Context?.status === 'error' && web3Context.error instanceof UnsupportedChainIdError) {
       disconnect(web3Context)
       redirectState$.next(window.location.pathname)
-      replace(`/connect`)
+      replace(`/connect`, getCustomNetworkParameter())
     }
 
     if (web3Context && web3Context.status === 'connectedReadonly') {
@@ -644,17 +644,19 @@ export function WithWalletConnection({ children }: WithChildren) {
     if (web3Context?.status === 'error' && web3Context.error instanceof UnsupportedChainIdError) {
       disconnect(web3Context)
       redirectState$.next(window.location.pathname)
-      replace(`/connect`)
+      replace(`/connect`, getCustomNetworkParameter())
     }
 
     if (web3Context?.status === 'connectedReadonly') {
       redirectState$.next(window.location.pathname)
-      replace(`/connect`)
+      replace(`/connect`, getCustomNetworkParameter())
     }
 
     if (web3Context?.status === 'notConnected') {
       redirectState$.next(window.location.pathname)
-      autoConnect(web3Context$, getNetworkId(), () => replace(`/connect`))
+      autoConnect(web3Context$, getNetworkId(), () =>
+        replace(`/connect`, getCustomNetworkParameter()),
+      )
     }
   }, [web3Context?.status])
 
