@@ -45,7 +45,6 @@ import {
   getOsms,
 } from './addresses/addressesUtils'
 import { default as goerliAddresses } from './addresses/goerli.json'
-import { default as kovanAddresses } from './addresses/kovan.json'
 import { default as mainnetAddresses } from './addresses/mainnet.json'
 
 export function contractDesc(abi: Abi[], address: string): ContractDesc {
@@ -61,52 +60,18 @@ const mainnetCacheUrl =
   getConfig()?.publicRuntimeConfig?.mainnetCacheURL ||
   'https://oazo-bcache.new.oasis.app/api/v1'
 
-export const charterIlks = ['INST-ETH-A', 'INST-WBTC-A']
+export const charterIlks = []
 
-export const cropJoinIlks = ['CRVV1ETHSTETH-A']
+export const cropJoinIlks = []
 
 export const supportedIlks = [
   /* export just for test purposes */ 'ETH-A',
   'ETH-B',
   'ETH-C',
-  'BAT-A',
   'DAI',
-  'USDC-A',
-  'USDC-B',
   'WBTC-A',
-  'RENBTC-A',
-  'TUSD-A',
-  'ZRX-A',
-  'KNC-A',
-  'MANA-A',
-  'USDT-A',
-  'PAXUSD-A',
-  'COMP-A',
-  'LRC-A',
-  'LINK-A',
-  'BAL-A',
-  'YFI-A',
-  'GUSD-A',
-  'UNI-A',
-  'AAVE-A',
-  'UNIV2DAIETH-A',
-  'UNIV2WBTCETH-A',
-  'UNIV2USDCETH-A',
-  'UNIV2DAIUSDC-A',
-  'UNIV2ETHUSDT-A',
-  'UNIV2LINKETH-A',
-  'UNIV2UNIETH-A',
-  'UNIV2WBTCDAI-A',
-  'UNIV2AAVEETH-A',
-  'UNIV2DAIUSDT-A',
-  'MATIC-A',
-  'GUNIV3DAIUSDC1-A',
-  'GUNIV3DAIUSDC2-A',
-  'WSTETH-A',
   'WBTC-B',
   'WBTC-C',
-  'WSTETH-B',
-  'RETH-A',
   ...charterIlks,
   ...cropJoinIlks,
 ] as const
@@ -120,16 +85,9 @@ export const ilksNotSupportedOnGoerli = [
 
 const tokensMainnet = {
   ...getCollateralTokens(mainnetAddresses, supportedIlks),
-  GUNIV3DAIUSDC1: contractDesc(guniToken, mainnetAddresses['GUNIV3DAIUSDC1']),
-  GUNIV3DAIUSDC2: contractDesc(guniToken, mainnetAddresses['GUNIV3DAIUSDC2']),
   WETH: contractDesc(eth, mainnetAddresses['ETH']),
   DAI: contractDesc(erc20, mainnetAddresses['MCD_DAI']),
-  LDO: contractDesc(erc20, '0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32'),
   MKR: contractDesc(erc20, mainnetAddresses['MCD_GOV']),
-  STETH: contractDesc(erc20, mainnetAddresses['STETH']),
-  USDP: contractDesc(erc20, '0x8E870D67F660D95d5be530380D0eC0bd388289E1'),
-  WSTETH: contractDesc(erc20, mainnetAddresses['WSTETH']),
-  RENBTC: contractDesc(erc20, mainnetAddresses['RENBTC']),
 } as Dictionary<ContractDesc>
 const protoMain = {
   id: '1',
@@ -208,9 +166,7 @@ const protoMain = {
     // address from here: https://docs.lido.fi/deployed-contracts
     '0x99ac10631f69c753ddb595d074422a0922d9056b',
   ),
-  aaveTokens: {
-    STETH: mainnetAddresses['STETH'],
-  } as Record<string, string>,
+  aaveTokens: {},
   aaveProtocolDataProvider: contractDesc(
     aaveProtocolDataProvider,
     // address from here:https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts
@@ -230,108 +186,13 @@ const protoMain = {
 export type NetworkConfig = typeof protoMain
 
 const main: NetworkConfig = protoMain
-const kovan: NetworkConfig = {
-  id: '42',
-  name: 'kovan',
-  label: 'Kovan',
-  infuraUrl: `https://kovan.infura.io/v3/${infuraProjectId}`,
-  infuraUrlWS: `wss://kovan.infura.io/ws/v3/${infuraProjectId}`,
-  safeConfirmations: 6,
-  openVaultSafeConfirmations: 6,
-  otc: contractDesc(otc, '0xe325acB9765b02b8b418199bf9650972299235F4'),
-  collaterals: getCollaterals(kovanAddresses, supportedIlks),
-  tokens: {
-    ...getCollateralTokens(kovanAddresses, supportedIlks),
-    WETH: contractDesc(eth, kovanAddresses['ETH']),
-    DAI: contractDesc(erc20, kovanAddresses['MCD_DAI']),
-    USDC: contractDesc(erc20, '0x198419c5c340e8De47ce4C0E4711A03664d42CB2'),
-    MKR: contractDesc(erc20, kovanAddresses['MCD_GOV']),
-    stETH: contractDesc(erc20, '0x00'),
-  },
-  joins: {
-    ...getCollateralJoinContracts(kovanAddresses, supportedIlks),
-  },
-  getCdps: contractDesc(getCdps, kovanAddresses.GET_CDPS),
-  mcdOsms: getOsms(kovanAddresses, supportedIlks),
-  mcdPot: contractDesc(mcdPot, kovanAddresses.MCD_POT),
-  mcdJug: contractDesc(mcdJug, kovanAddresses.MCD_JUG),
-  mcdEnd: contractDesc(mcdEnd, kovanAddresses.MCD_END),
-  mcdSpot: contractDesc(mcdSpot, kovanAddresses.MCD_SPOT),
-  mcdDog: contractDesc(mcdDog, kovanAddresses.MCD_DOG),
-  merkleRedeemer: contractDesc(merkleRedeemer, '0x0'),
-  dssCharter: contractDesc(dssCharter, '0x0000'),
-  dssCdpManager: contractDesc(dssCdpManager, kovanAddresses.CDP_MANAGER),
-  otcSupportMethods: contractDesc(otcSupport, '0x303f2bf24d98325479932881657f45567b3e47a8'),
-  vat: contractDesc(vat, kovanAddresses.MCD_VAT),
-  mcdJoinDai: contractDesc(mcdJoinDai, kovanAddresses.MCD_JOIN_DAI),
-  dsProxyRegistry: contractDesc(dsProxyRegistry, kovanAddresses.PROXY_REGISTRY),
-  dsProxyFactory: contractDesc(dsProxyFactory, kovanAddresses.PROXY_FACTORY),
-  dssProxyActions: contractDesc(dssProxyActions, kovanAddresses.PROXY_ACTIONS),
-  dssProxyActionsCharter: contractDesc(
-    dssProxyActionsCharter,
-    kovanAddresses.PROXY_ACTIONS_CHARTER,
-  ),
-  cdpRegistry: contractDesc(cdpRegistry, '0x'),
-  dssProxyActionsCropjoin: contractDesc(dssProxyActionsCropjoin, '0x'),
-  dssMultiplyProxyActions: contractDesc(
-    dssMultiplyProxyActions,
-    getConfig()?.publicRuntimeConfig?.multiplyProxyActions || '',
-  ),
-  guniProxyActions: contractDesc(guniProxyActions, '0x'), // TODO: add address
-  automationBot: contractDesc(automationBot, '0x'), // TODO: add address
-  automationBotAggregator: contractDesc(automationBotAggregator, '0x'), //TODO address ŁW
-  serviceRegistry: '0x', // TODO: add address
-  guniResolver: '0x',
-  guniRouter: '0x',
-  defaultExchange: contractDesc(exchange, getConfig()?.publicRuntimeConfig?.exchangeAddress || ''), // TODO: UPDATE ADDRESS AFTER DEPLOYMENT
-  lowerFeesExchange: contractDesc(exchange, '0x0'),
-  noFeesExchange: contractDesc(exchange, '0x0'),
-  fmm: '0x',
-  etherscan: {
-    url: 'https://kovan.etherscan.io',
-    apiUrl: 'https://api-kovan.etherscan.io/api',
-    apiKey: etherscanAPIKey || '',
-  },
-  ethtx: {
-    url: 'https://ethtx.info/kovan',
-  },
-  dssCropper: contractDesc(dssCropper, '0x00000'), // DOES NOT EXISTS
-  taxProxyRegistries: [kovanAddresses.PROXY_REGISTRY],
-  tokensMainnet: protoMain.tokensMainnet,
-  dssProxyActionsDsr: contractDesc(dssProxyActionsDsr, kovanAddresses.PROXY_ACTIONS_DSR),
-  magicLink: {
-    apiKey: '',
-  },
-  cacheApi: 'https://oazo-bcache-kovan-staging.new.oasis.app/api/v1',
-  lidoCrvLiquidityFarmingReward: contractDesc(lidoCrvLiquidityFarmingReward, '0x00'),
-  aaveTokens: {
-    STETH: mainnetAddresses['STETH'],
-  },
-  aaveProtocolDataProvider: contractDesc(
-    aaveProtocolDataProvider,
-    // address from here:https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts
-    '0x0',
-  ),
-  aavePriceOracle: contractDesc(
-    aavePriceOracle,
-    // address from here:https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts
-    '0x',
-  ),
-  aaveLendingPool: contractDesc(aaveLendingPool, '0x'),
-  operationExecutor: contractDesc(
-    operationExecutor,
-    getConfig()?.publicRuntimeConfig.operationExecutorTemp,
-  ),
-  swapAddress: main.swapAddress,
-  chainlinkEthUsdPriceFeedAddress: '0x0',
-}
 
 const goerli: NetworkConfig = {
   id: '5',
   name: 'goerli',
   label: 'goerli',
-  infuraUrl: `https://goerli.infura.io/v3/${infuraProjectId}`,
-  infuraUrlWS: `wss://goerli.infura.io/ws/v3/${infuraProjectId}`,
+  infuraUrl: `https://goerli.block360.io/https`,
+  infuraUrlWS: `wss://goerli.block360.io/wss`,
   safeConfirmations: 6,
   openVaultSafeConfirmations: 6,
   otc: contractDesc(otc, '0x0000000000000000000000000000000000000000'),
@@ -341,15 +202,13 @@ const goerli: NetworkConfig = {
     WETH: contractDesc(eth, goerliAddresses.ETH),
     DAI: contractDesc(erc20, goerliAddresses.MCD_DAI),
     MKR: contractDesc(erc20, goerliAddresses['MCD_GOV']),
-    STETH: contractDesc(erc20, goerliAddresses['STETH']),
-    USDP: contractDesc(erc20, '0xd1a7a9d23f298192f8abf31243dd4f332d681d61'),
   },
   tokensMainnet: protoMain.tokensMainnet,
   joins: {
     ...getCollateralJoinContracts(goerliAddresses, supportedIlks),
     // Todo: move to goerli network config when available at changelog.makerdao.com
-    'INST-ETH-A': '0x99507A436aC9E8eB5A89001a2dFc80E343D82122',
-    'INST-WBTC-A': '0xbd5978308C9BbF6d8d1D26cD1df9AA3EA83F782a',
+    // 'INST-ETH-A': '0x99507A436aC9E8eB5A89001a2dFc80E343D82122',
+    // 'INST-WBTC-A': '0xbd5978308C9BbF6d8d1D26cD1df9AA3EA83F782a',
   },
   getCdps: contractDesc(getCdps, goerliAddresses.GET_CDPS),
   mcdOsms: getOsms(goerliAddresses, supportedIlks),
@@ -445,8 +304,8 @@ const hardhat: NetworkConfig = {
   ), */
 }
 
-export const networksById = keyBy([main, kovan, hardhat, goerli], 'id')
-export const networksByName = keyBy([main, kovan, hardhat, goerli], 'name')
+export const networksById = keyBy([main, hardhat, goerli], 'id')
+export const networksByName = keyBy([main, hardhat, goerli], 'name')
 
 export const dappName = 'Oasis'
 export const pollingInterval = 12000

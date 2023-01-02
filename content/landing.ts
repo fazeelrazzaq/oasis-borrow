@@ -13,15 +13,5 @@ export const LANDING_PILLS = [
     icon: 'dai_circle_color',
     label: 'DAI',
     link: '/asset/dai',
-  },
-  {
-    icon: 'uni_lp_circle_color',
-    label: 'UNI LP',
-    link: '/asset/lp-token',
-  },
-  {
-    icon: 'yfi_circle_color',
-    label: 'YFI',
-    link: '/asset/yfi',
-  },
+  }
 ]
