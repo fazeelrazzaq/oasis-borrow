@@ -121,28 +121,28 @@ const protoMain = {
   dsProxyFactory: contractDesc(dsProxyFactory, mainnetAddresses.PROXY_FACTORY),
   dssProxyActions: contractDesc(dssProxyActions, mainnetAddresses.PROXY_ACTIONS),
   dssProxyActionsCharter: contractDesc(dssProxyActionsCharter, '0x0000'),
-  automationBot: contractDesc(automationBot, '0x6E87a7A0A03E51A741075fDf4D1FCce39a4Df01b'),
-  automationBotAggregator: contractDesc(
-    automationBotAggregator,
-    '0x5f1d184204775fBB351C4b2C61a2fD4aAbd3fB76',
-  ),
-  serviceRegistry: '0x9b4Ae7b164d195df9C4Da5d08Be88b2848b2EaDA',
-  guniProxyActions: contractDesc(guniProxyActions, '0xed3a954c0adfc8e3f85d92729c051ff320648e30'),
-  guniResolver: '0x0317650Af6f184344D7368AC8bB0bEbA5EDB214a',
-  guniRouter: '0x14E6D67F824C3a7b4329d3228807f8654294e4bd',
-  dssMultiplyProxyActions: contractDesc(
-    dssMultiplyProxyActions,
-    '0x2a49eae5cca3f050ebec729cf90cc910fadaf7a2',
-  ),
-  dssCropper: contractDesc(dssCropper, '0x8377CD01a5834a6EaD3b7efb482f678f2092b77e'),
+  // automationBot: contractDesc(automationBot, '0x6E87a7A0A03E51A741075fDf4D1FCce39a4Df01b'),
+  // automationBotAggregator: contractDesc(
+  //   automationBotAggregator,
+  //   '0x5f1d184204775fBB351C4b2C61a2fD4aAbd3fB76',
+  // ),
+  // serviceRegistry: '0x9b4Ae7b164d195df9C4Da5d08Be88b2848b2EaDA',
+  // guniProxyActions: contractDesc(guniProxyActions, '0xed3a954c0adfc8e3f85d92729c051ff320648e30'),
+  // guniResolver: '0x0317650Af6f184344D7368AC8bB0bEbA5EDB214a',
+  // guniRouter: '0x14E6D67F824C3a7b4329d3228807f8654294e4bd',
+  // dssMultiplyProxyActions: contractDesc(
+  //   dssMultiplyProxyActions,
+  //   '0x2a49eae5cca3f050ebec729cf90cc910fadaf7a2',
+  // ),
+  // dssCropper: contractDesc(dssCropper, '0x8377CD01a5834a6EaD3b7efb482f678f2092b77e'),
   cdpRegistry: contractDesc(cdpRegistry, '0xBe0274664Ca7A68d6b5dF826FB3CcB7c620bADF3'),
-  dssProxyActionsCropjoin: contractDesc(
-    dssProxyActionsCropjoin,
-    '0xa2f69F8B9B341CFE9BfBb3aaB5fe116C89C95bAF',
-  ),
-  defaultExchange: contractDesc(exchange, '0xb5eB8cB6cED6b6f8E13bcD502fb489Db4a726C7B'),
-  noFeesExchange: contractDesc(exchange, '0x99e4484dac819aa74b347208752306615213d324'),
-  lowerFeesExchange: contractDesc(exchange, '0xf22f17b1d2354b4f4f52e4d164e4eb5e1f0a6ba6'),
+  // dssProxyActionsCropjoin: contractDesc(
+  //   dssProxyActionsCropjoin,
+  //   '0xa2f69F8B9B341CFE9BfBb3aaB5fe116C89C95bAF',
+  // ),
+  // defaultExchange: contractDesc(exchange, '0xb5eB8cB6cED6b6f8E13bcD502fb489Db4a726C7B'),
+  // noFeesExchange: contractDesc(exchange, '0x99e4484dac819aa74b347208752306615213d324'),
+  // lowerFeesExchange: contractDesc(exchange, '0xf22f17b1d2354b4f4f52e4d164e4eb5e1f0a6ba6'),
   fmm: mainnetAddresses.MCD_FLASH,
   etherscan: {
     url: 'https://etherscan.io',
@@ -179,8 +179,8 @@ const protoMain = {
   ),
   aaveLendingPool: contractDesc(aaveLendingPool, mainnetAddresses.AAVE_LENDING_POOL),
   operationExecutor: contractDesc(operationExecutor, mainnetAddresses.OPERATION_EXECUTOR),
-  swapAddress: mainnetAddresses.SWAP,
-  chainlinkEthUsdPriceFeedAddress: mainnetAddresses.CHAINLINK_ETH_USD_PRICE_FEED,
+  // swapAddress: mainnetAddresses.SWAP,
+  // chainlinkEthUsdPriceFeedAddress: mainnetAddresses.CHAINLINK_ETH_USD_PRICE_FEED,
 }
 
 export type NetworkConfig = typeof protoMain
@@ -206,9 +206,6 @@ const goerli: NetworkConfig = {
   tokensMainnet: protoMain.tokensMainnet,
   joins: {
     ...getCollateralJoinContracts(goerliAddresses, supportedIlks),
-    // Todo: move to goerli network config when available at changelog.makerdao.com
-    // 'INST-ETH-A': '0x99507A436aC9E8eB5A89001a2dFc80E343D82122',
-    // 'INST-WBTC-A': '0xbd5978308C9BbF6d8d1D26cD1df9AA3EA83F782a',
   },
   getCdps: contractDesc(getCdps, goerliAddresses.GET_CDPS),
   mcdOsms: getOsms(goerliAddresses, supportedIlks),
@@ -218,7 +215,7 @@ const goerli: NetworkConfig = {
   mcdSpot: contractDesc(mcdSpot, goerliAddresses.MCD_SPOT),
   mcdDog: contractDesc(mcdDog, goerliAddresses.MCD_DOG),
   merkleRedeemer: contractDesc(merkleRedeemer, '0x23440aC6c8a10EA89132da74B705CBc6D99a805b'),
-  dssCharter: contractDesc(dssCharter, '0x7ea0d7ea31C544a472b55D19112e016Ba6708288'),
+  dssCharter: contractDesc(dssCharter, '0x0000123'),
   dssCdpManager: contractDesc(dssCdpManager, goerliAddresses.CDP_MANAGER),
   otcSupportMethods: contractDesc(otcSupport, '0x0000000000000000000000000000000000000000'),
   vat: contractDesc(vat, goerliAddresses.MCD_VAT),
@@ -226,29 +223,26 @@ const goerli: NetworkConfig = {
   dsProxyRegistry: contractDesc(dsProxyRegistry, goerliAddresses.PROXY_REGISTRY),
   dsProxyFactory: contractDesc(dsProxyFactory, goerliAddresses.PROXY_FACTORY),
   dssProxyActions: contractDesc(dssProxyActions, goerliAddresses.PROXY_ACTIONS),
-  dssProxyActionsCharter: contractDesc(
-    dssProxyActionsCharter,
-    '0xfFb896D7BEf704DF73abc9A2EBf295CE236c5919',
-  ),
-  cdpRegistry: contractDesc(cdpRegistry, '0x0636E6878703E30aB11Ba13A68C6124d9d252e6B'),
-  dssProxyActionsCropjoin: contractDesc(dssProxyActionsCropjoin, '0x'),
-  dssMultiplyProxyActions: contractDesc(
-    dssMultiplyProxyActions,
-    '0xc9628adc0a9f95D1d912C5C19aaBFF85E420a853',
-  ),
-  guniProxyActions: contractDesc(guniProxyActions, '0x'), // TODO: add address
-  dssCropper: contractDesc(dssCropper, '0x00000'), // DOES NOT EXISTS
-  guniResolver: '0x',
-  guniRouter: '0x',
-  automationBot: contractDesc(automationBot, '0xabDB63B4b3BA9f960CF942800a6982F88e9b1A6b'),
-  automationBotAggregator: contractDesc(
-    automationBotAggregator,
-    '0xeb3c922A805FAEEac8f311E1AdF34fBC518099ab',
-  ),
-  serviceRegistry: '0x5A5277B8c8a42e6d8Ab517483D7D59b4ca03dB7F',
-  defaultExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
-  lowerFeesExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
-  noFeesExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
+  dssProxyActionsCharter: contractDesc(dssCropper, '0x00000'),
+  cdpRegistry: contractDesc(cdpRegistry, '0xb769554194c37a7eBFcE27CF8D492CeCb9AE2E39'),
+  // dssProxyActionsCropjoin: contractDesc(dssProxyActionsCropjoin, '0x'),
+  // dssMultiplyProxyActions: contractDesc(
+  //   dssMultiplyProxyActions,
+  //   '0xc9628adc0a9f95D1d912C5C19aaBFF85E420a853',
+  // ),
+  // guniProxyActions: contractDesc(guniProxyActions, '0x'), // TODO: add address
+  // dssCropper: contractDesc(dssCropper, '0x00000'), // DOES NOT EXISTS
+  // guniResolver: '0x',
+  // guniRouter: '0x',
+  // automationBot: contractDesc(automationBot, '0xabDB63B4b3BA9f960CF942800a6982F88e9b1A6b'),
+  // automationBotAggregator: contractDesc(
+  //   automationBotAggregator,
+  //   '0xeb3c922A805FAEEac8f311E1AdF34fBC518099ab',
+  // ),
+  // serviceRegistry: '0x5A5277B8c8a42e6d8Ab517483D7D59b4ca03dB7F',
+  // defaultExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
+  // lowerFeesExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
+  // noFeesExchange: contractDesc(exchange, '0x2b0b4c5c58fe3CF8863c4948887099A09b84A69c'),
   // Currently this is not supported on Goerli - no deployed contract
   fmm: goerliAddresses.MCD_FLASH,
   etherscan: {
@@ -279,8 +273,8 @@ const goerli: NetworkConfig = {
   ),
   aaveLendingPool: contractDesc(aaveLendingPool, goerliAddresses.AAVE_LENDING_POOL),
   operationExecutor: contractDesc(operationExecutor, goerliAddresses.OPERATION_EXECUTOR),
-  swapAddress: goerliAddresses.SWAP,
-  chainlinkEthUsdPriceFeedAddress: goerliAddresses.CHAINLINK_ETH_USD_PRICE_FEED,
+  // swapAddress: goerliAddresses.SWAP,
+  // chainlinkEthUsdPriceFeedAddress: goerliAddresses.CHAINLINK_ETH_USD_PRICE_FEED,
 }
 
 const hardhat: NetworkConfig = {
