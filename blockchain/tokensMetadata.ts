@@ -4,15 +4,17 @@ import type { ElementOf } from 'ts-essentials'
 
 export interface TokenConfig {
   symbol: string
+  rootToken?: string
   precision: number
   digits: number
-  maxSell: string
+  maxSell?: string
   name: string
   icon: string
   iconCircle: string
   iconColor: string
-  coinpaprikaTicker: string
+  coinpaprikaTicker?: string
   tags: CoinTag[]
+  coinpaprikaFallbackTicker?: string
   color: string
   bannerIcon: string
   bannerGif?: string
@@ -21,14 +23,20 @@ export interface TokenConfig {
   coinbaseTicker?: string
   coinGeckoId?: string
   background?: string
-  digitsInstant?: number,
   gsuRatesTicker?: string
+  digitsInstant?: number
+  safeCollRatio?: number
+  protocol: 'GSU' | 'aave'
 }
 
 export const COIN_TAGS = ['stablecoin', 'lp-token'] as const
 export type CoinTag = ElementOf<typeof COIN_TAGS>
+export enum ProtocolLongNames {
+  GSU = 'GSU',
+  aave = 'Aave V2',
+}
 
-export const tokens = [
+export const tokens: TokenConfig[] = [
   {
     symbol: 'MKR',
     precision: 18,
@@ -45,6 +53,7 @@ export const tokens = [
     bannerIcon: staticFilesRuntimeUrl('/static/img/tokens/eth.png'),
     bannerGif: staticFilesRuntimeUrl('/static/img/tokens/eth.gif'),
     tags: [],
+    protocol: 'GSU',
   },
   {
     symbol: 'WETH',
@@ -62,6 +71,7 @@ export const tokens = [
     bannerIcon: staticFilesRuntimeUrl('/static/img/tokens/eth.png'),
     bannerGif: staticFilesRuntimeUrl('/static/img/tokens/eth.gif'),
     tags: [],
+    protocol: 'GSU',
   },
   {
     symbol: 'ETH',
@@ -82,6 +92,7 @@ export const tokens = [
     bannerIcon: staticFilesRuntimeUrl('/static/img/tokens/eth.png'),
     bannerGif: staticFilesRuntimeUrl('/static/img/tokens/eth.gif'),
     tags: [],
+    protocol: 'GSU',
   },
   {
     symbol: 'WBTC',
@@ -103,6 +114,7 @@ export const tokens = [
     bannerGif: staticFilesRuntimeUrl('/static/img/tokens/wbtc.gif'),
     tags: [],
     rootToken: 'BTC',
+    protocol: 'GSU',
   },
   {
     symbol: 'DAI',
@@ -121,6 +133,7 @@ export const tokens = [
     background: '',
     bannerGif: '',
     tags: ['stablecoin'],
+    protocol: 'GSU',
   }
 ]
 
