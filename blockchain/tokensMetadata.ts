@@ -235,16 +235,10 @@ export const ETH_TOKENS = tokens
 
 export const ONLY_MULTIPLY_TOKENS = []
 
+// @GSUpro, optimization and protection disabled for all ilks
 const ALLOWED_AUTOMATION_ILKS: Record<string, string[]> = {
-  main: [
-    'ETH-A',
-    'ETH-B',
-    'ETH-C',
-    'WBTC-A',
-    'WBTC-B',
-    'WBTC-C'
-  ],
-  goerli: ['ETH-A', 'ETH-B', 'ETH-C', 'WBTC-A', 'WBTC-B', 'WBTC-C',],
+  main: [],
+  goerli: []
 }
 
 export function isSupportedAutomationIlk(network: string, ilk: string) {
