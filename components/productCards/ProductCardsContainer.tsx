@@ -34,7 +34,7 @@ function ProductCardsContainer(props: ProductCardsContainerProps) {
   const [productCardsData, productCardsDataError] = useObservable(
     productCardsData$(props.strategies.maker),
   )
-  const aaveStrategyCards = getTokens(props.strategies.aave)
+  // const aaveStrategyCards = getTokens(props.strategies.aave)
 
   return (
     <WithErrorHandler error={[productCardsDataError]}>
@@ -48,13 +48,13 @@ function ProductCardsContainer(props: ProductCardsContainerProps) {
             {_productCardsData.map((cardData) => (
               <ProductCard cardData={cardData} key={cardData.ilk} />
             ))}
-            {showAaveStETHETHProductCard &&
+            {/* {showAaveStETHETHProductCard &&
               aaveStrategyCards.map((tokenData) => (
                 <ProductCardEarnAave
                   cardData={tokenData}
                   key={`ProductCardEarnAave_${tokenData.symbol}`}
                 />
-              ))}
+              ))} */}
           </ProductCardsWrapper>
         )}
       </WithLoadingIndicator>
