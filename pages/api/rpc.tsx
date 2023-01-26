@@ -302,7 +302,7 @@ export async function rpc(req: NextApiRequest, res: NextApiResponse) {
 
       const spotAddress = getSpotAddress(network)
       const multicallFailedCalls = missingCalls.filter(
-        (x: any, i: number) => dataFromMulticall[i] === false,
+        (x: any, i: number) => dataFromMulticall[i][0] === false,
       )
 
       let data: any[]
