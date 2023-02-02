@@ -268,7 +268,6 @@ import {
   createProductCardsWithBalance$,
   supportedBorrowIlks,
   supportedEarnIlks,
-  supportedMultiplyIlks,
 } from 'helpers/productCards'
 import { zero } from 'helpers/zero'
 import { isEqual, mapValues, memoize } from 'lodash'

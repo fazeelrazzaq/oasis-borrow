@@ -6,8 +6,6 @@ import { AutomationContextInput } from 'features/automation/contexts/AutomationC
 import { VaultProtocol } from 'helpers/getVaultProtocol'
 import React, { PropsWithChildren, useMemo } from 'react'
 
-import { AaveProtocolData } from '../../aave/manage/services'
-
 export interface AaveManageVaultState {
   address: string
   aaveReserveState: AaveReserveConfigurationData
