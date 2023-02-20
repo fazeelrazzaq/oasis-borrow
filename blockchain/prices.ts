@@ -109,17 +109,17 @@ export function createTokenPriceInUSD$(
         tokens.map((token) => {
           try {
             const {
-              coinpaprikaTicker,
-              coinbaseTicker,
-              coinGeckoTicker,
-              coinpaprikaFallbackTicker,
+              // coinpaprikaTicker,
+              // coinbaseTicker,
+              // coinGeckoTicker,
+              // coinpaprikaFallbackTicker,
               gsuRatesTicker
             } = getToken(token)
             const tokenPrice = getPrice(tickers, [
-              coinbaseTicker,
-              coinpaprikaTicker,
-              coinGeckoTicker,
-              coinpaprikaFallbackTicker,
+              // coinbaseTicker,
+              // coinpaprikaTicker,
+              // coinGeckoTicker,
+              // coinpaprikaFallbackTicker,
               gsuRatesTicker
             ])            
             return of({

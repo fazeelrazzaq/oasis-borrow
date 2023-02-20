@@ -1,9 +1,8 @@
+import { amountFromWei } from '@oasisdex/utils'
 import axios from 'axios'
+import BigNumber from 'bignumber.js'
 import { tokens } from 'blockchain/tokensMetadata'
 import { PriceServiceResponse } from 'helpers/types'
-import { amountFromWei } from '@oasisdex/utils'
-import BigNumber from 'bignumber.js'
-
 
 interface GSURateApiResponse {
   price: string
@@ -17,7 +16,7 @@ async function fetchTicker(product_id: string): Promise<{ data: GSURateApiRespon
   return axios({
     method: 'get',
     timeout: 5000,
-    url: `https://goerli.gsu.io/Umbraco/Api/Rates/GSU/?symbol=${product_id}`,
+    url: `https://api.gsucoin.app/Products/GSULive/?symbol=${product_id}`,
     responseType: 'json',
     headers: {
       Accept: 'application/json',
@@ -36,7 +35,7 @@ export async function getGSURatesTickers(): Promise<PriceServiceResponse> {
   return mappedResult.reduce((acc, res) => {
     return {
       ...acc,
-      [res.ticker]: Number(amountFromWei(new BigNumber(res.price))),
+      [res.ticker]: res.price,
     }
   }, {})
 }
