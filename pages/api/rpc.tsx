@@ -75,7 +75,7 @@ function getSpotAddress(network: string) {
     case 'mainnet':
       return `0x65C79fcB50Ca1594B025960e539eD7A9a6D434A3`
     case 'goerli':
-      return `0xACe2A9106ec175bd56ec05C9E38FE1FDa8a1d758`
+      return `0x7C8A9bDD9DA077D5cD2141365EF1B79db98dBd82`
     default:
       throw new Error('unsupported network')
   }

@@ -23,7 +23,7 @@ export function GeneralManageControl({ id }: GeneralManageControlProps) {
     }
   }, [])
 
-  const vaultHistoryCheck = generalManageVaultData?.state.vaultHistory.length || undefined
+  const vaultHistoryCheck = generalManageVaultData?.state.vaultHistory.length || []
 
   return (
     <WithErrorHandler error={[generalManageVaultError]}>

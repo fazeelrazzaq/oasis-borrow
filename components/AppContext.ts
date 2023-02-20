@@ -273,12 +273,11 @@ import {
 import { zero } from 'helpers/zero'
 import { isEqual, mapValues, memoize } from 'lodash'
 import moment from 'moment'
-
 import { equals } from 'ramda'
 import { combineLatest, defer, Observable, of, Subject } from 'rxjs'
 import {
-  distinctUntilKeyChanged,
   distinctUntilChanged,
+  distinctUntilKeyChanged,
   filter,
   map,
   mergeMap,

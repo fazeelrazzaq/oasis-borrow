@@ -7,8 +7,6 @@ import { Dictionary } from 'ts-essentials'
 import * as aaveLendingPool from './abi/aave-lending-pool.json'
 import * as aavePriceOracle from './abi/aave-price-oracle.json'
 import * as aaveProtocolDataProvider from './abi/aave-protocol-data-provider.json'
-import * as automationBotAggregator from './abi/automation-bot-aggregator.json'
-import * as automationBot from './abi/automation-bot.json'
 import * as cdpRegistry from './abi/cdp-registry.json'
 import * as eth from './abi/ds-eth-token.json'
 import * as dsProxyFactory from './abi/ds-proxy-factory.json'
@@ -16,15 +14,11 @@ import * as dsProxyRegistry from './abi/ds-proxy-registry.json'
 import * as dssCdpManager from './abi/dss-cdp-manager.json'
 import * as dssCharter from './abi/dss-charter.json'
 import * as dssCropper from './abi/dss-cropper.json'
-import * as guniProxyActions from './abi/dss-guni-proxy-actions.json'
 import * as dssProxyActionsCharter from './abi/dss-proxy-actions-charter.json'
-import * as dssProxyActionsCropjoin from './abi/dss-proxy-actions-cropjoin.json'
 import * as dssProxyActionsDsr from './abi/dss-proxy-actions-dsr.json'
 import * as dssProxyActions from './abi/dss-proxy-actions.json'
 import * as erc20 from './abi/erc20.json'
-import * as exchange from './abi/exchange.json'
 import * as getCdps from './abi/get-cdps.json'
-import * as guniToken from './abi/guni-token.json'
 import * as lidoCrvLiquidityFarmingReward from './abi/lido-crv-liquidity-farming-reward.json'
 import * as otc from './abi/matching-market.json'
 import * as mcdDog from './abi/mcd-dog.json'
@@ -34,7 +28,6 @@ import * as mcdJug from './abi/mcd-jug.json'
 import * as mcdPot from './abi/mcd-pot.json'
 import * as mcdSpot from './abi/mcd-spot.json'
 import * as merkleRedeemer from './abi/merkle-redeemer.json'
-import * as dssMultiplyProxyActions from './abi/multiply-proxy-actions.json'
 import * as operationExecutor from './abi/operation-executor.json'
 import * as otcSupport from './abi/otc-support-methods.json'
 import * as vat from './abi/vat.json'
@@ -152,7 +145,7 @@ const protoMain = {
   //   '0x2a49eae5cca3f050ebec729cf90cc910fadaf7a2',
   // ),
   // dssCropper: contractDesc(dssCropper, '0x8377CD01a5834a6EaD3b7efb482f678f2092b77e'),
-  cdpRegistry: contractDesc(cdpRegistry, '0xBe0274664Ca7A68d6b5dF826FB3CcB7c620bADF3'),
+  cdpRegistry: contractDesc(cdpRegistry, mainnetAddresses.CDP_REGISTRY),
   // dssProxyActionsCropjoin: contractDesc(
   //   dssProxyActionsCropjoin,
   //   '0xa2f69F8B9B341CFE9BfBb3aaB5fe116C89C95bAF',
@@ -241,7 +234,7 @@ const goerli: NetworkConfig = {
   dsProxyFactory: contractDesc(dsProxyFactory, goerliAddresses.PROXY_FACTORY),
   dssProxyActions: contractDesc(dssProxyActions, goerliAddresses.PROXY_ACTIONS),
   dssProxyActionsCharter: contractDesc(dssCropper, '0x00000'),
-  cdpRegistry: contractDesc(cdpRegistry, '0xb769554194c37a7eBFcE27CF8D492CeCb9AE2E39'),
+  cdpRegistry: contractDesc(cdpRegistry, goerliAddresses.CDP_REGISTRY),
   // dssProxyActionsCropjoin: contractDesc(dssProxyActionsCropjoin, '0x'),
   // dssMultiplyProxyActions: contractDesc(
   //   dssMultiplyProxyActions,
@@ -275,7 +268,7 @@ const goerli: NetworkConfig = {
   magicLink: {
     apiKey: '',
   },
-  cacheApi: 'https://oazo-bcache-goerli-staging.new.oasis.app/api/v1',
+  cacheApi: 'https://cache-goerli-beta.gsuprotocol.io/v1',
   lidoCrvLiquidityFarmingReward: contractDesc(lidoCrvLiquidityFarmingReward, '0x00'),
   aaveTokens: {},
   aaveProtocolDataProvider: contractDesc(
