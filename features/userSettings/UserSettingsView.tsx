@@ -356,25 +356,13 @@ export function UserSettings({ sx }: { sx?: SxStyleProp }) {
           pt: 2,
         }}
       >
-        <AppLink
-          variant="settings"
-          sx={{ mr: 3 }}
-          withAccountPrefix={false}
-          href="/terms"
-          onClick={close}
-        >
+        <AppLink variant="settings" sx={{ mr: 3 }} withAccountPrefix={false} href="/terms">
           {t('account-terms')}
         </AppLink>
-        <AppLink
-          variant="settings"
-          sx={{ mr: 3 }}
-          withAccountPrefix={false}
-          href="/privacy"
-          onClick={close}
-        >
+        <AppLink variant="settings" sx={{ mr: 3 }} withAccountPrefix={false} href="/privacy">
           {t('account-privacy')}
         </AppLink>
-        <AppLink variant="settings" withAccountPrefix={false} href="/support" onClick={close}>
+        <AppLink variant="settings" withAccountPrefix={false} href="/support">
           {t('account-support')}
         </AppLink>
       </Flex>
