@@ -159,7 +159,7 @@ export const productCardsConfig: {
     featuredAaveCards: {
       borrow: [],
       multiply: [],
-      earn: ['stETHeth'],
+      earn: [],
     },
   },
   descriptionCustomKeys: {
@@ -245,9 +245,11 @@ export function landingPageCardsData({
   productCardsData: ProductCardData[]
   product?: ProductTypes
 }) {
-  return productCardsData.filter((ilk) =>
-    productCardsConfig.landing.featuredIlkCards[product].includes(ilk.ilk),
-  )
+  return []
+  // @GSUpro, returns empty array for multiply ilks
+  // return productCardsData.filter((ilk) =>
+  //   productCardsConfig.landing.featuredIlkCards[product].includes(ilk.ilk),
+  // )
 }
 
 export function pageCardsDataByProduct({
@@ -257,11 +259,13 @@ export function pageCardsDataByProduct({
   productCardsData: ProductCardData[]
   product?: ProductTypes
 }) {
-  return productCardsData.filter((ilk) =>
-    productCardsConfig[product].cardsFilters.map((cardFilter) =>
-      ilk.token.includes(cardFilter.name),
-    ),
-  )
+  return []
+  // @GSUpro, returns empty array for multiply ilks
+  // return productCardsData.filter((ilk) =>
+  //   productCardsConfig[product].cardsFilters.map((cardFilter) =>
+  //     ilk.token.includes(cardFilter.name),
+  //   ),
+  // )
 }
 
 function sortCards<T extends IlkTokenMap>(

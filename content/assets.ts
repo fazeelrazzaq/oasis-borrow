@@ -9,6 +9,7 @@ export const ASSETS_PAGES = [
     icon: 'ether_circle_color',
     descriptionKey: 'assets.eth.description',
     link: 'assets.eth.link',
+    // @GSUpro, returns empty array for multiply ilks
     multiplyIlks: [],
     borrowIlks: ['ETH-C', 'ETH-A', 'ETH-B'],
   },
@@ -19,7 +20,8 @@ export const ASSETS_PAGES = [
     icon: 'btc_circle_color',
     descriptionKey: 'assets.btc.description',
     link: 'assets.btc.link',
-    multiplyIlks: ['WBTC-B', 'WBTC-A', 'WBTC-C'],
+    // @GSUpro, returns empty array for multiply ilks
+    multiplyIlks: [],
     borrowIlks: ['WBTC-C', 'WBTC-A', 'WBTC-B'],
   },
   {
