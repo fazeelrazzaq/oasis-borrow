@@ -1,17 +1,4 @@
-import { ViewPositionSectionComponent } from 'features/earn/aave/components/ViewPositionSectionComponent'
 
-import {
-  AavePositionHeaderNoDetails,
-  headerWithDetails,
-} from '../earn/aave/components/AavePositionHeader'
-import { ManageSectionComponent } from '../earn/aave/components/ManageSectionComponent'
-import { SimulateSectionComponent } from '../earn/aave/components/SimulateSectionComponent'
-import { adjustRiskSliderConfig as earnAdjustRiskSliderConfig } from '../earn/aave/riskSliderConfig'
-import { AaveMultiplyHeader } from '../multiply/aave/components/AaveMultiplyHeader'
-import { AaveMultiplyManageComponent } from '../multiply/aave/components/AaveMultiplyManageComponent'
-import { AaveMultiplySimulate } from '../multiply/aave/components/AaveMultiplySimulate'
-import { adjustRiskSliderConfig as multiplyAdjustRiskSliderConfig } from '../multiply/aave/riskSliderConfig'
-import { adjustRiskView } from './common/components/SidebarAdjustRiskView'
 import { StrategyConfig } from './common/StrategyConfigTypes'
 
 type StrategyConfigName = 'aave-earn' | 'aave-multiply'
@@ -22,7 +9,9 @@ export interface StrategyConfig_Temp {
   enabled: boolean
 }
 
-export const strategies: Record<StrategyConfigName, StrategyConfig>|Record<StrategyConfigName, StrategyConfig_Temp> = {
+export const strategies:
+  | Record<StrategyConfigName, StrategyConfig>
+  | Record<StrategyConfigName, StrategyConfig_Temp> = {
   'aave-earn': {
     // urlSlug: 'stETHeth',
     name: 'stETHeth',

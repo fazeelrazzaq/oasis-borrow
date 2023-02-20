@@ -1,4 +1,4 @@
-import { getTokens } from 'blockchain/tokensMetadata'
+// import { getTokens } from 'blockchain/tokensMetadata'
 import { ProductCardEarnDsr } from 'components/productCards/ProductCardEarnDsr'
 import { WithLoadingIndicator } from 'helpers/AppSpinner'
 import { WithErrorHandler } from 'helpers/errorHandlers/WithErrorHandler'
@@ -9,7 +9,7 @@ import React from 'react'
 
 import { useAppContext } from '../AppContextProvider'
 import { ProductCardBorrow } from './ProductCardBorrow'
-import { ProductCardEarnAave } from './ProductCardEarnAave'
+// import { ProductCardEarnAave } from './ProductCardEarnAave'
 import { ProductCardEarnMaker } from './ProductCardEarnMaker'
 import { ProductCardMultiply } from './ProductCardMultiply'
 import { ProductCardsLoader, ProductCardsWrapper } from './ProductCardsWrapper'
@@ -26,7 +26,7 @@ type ProductCardsContainerProps = {
 }
 
 function ProductCardsContainer(props: ProductCardsContainerProps) {
-  const showAaveStETHETHProductCard = useFeatureToggle('ShowAaveStETHETHProductCard')
+  // const showAaveStETHETHProductCard = useFeatureToggle('ShowAaveStETHETHProductCard')
   const ProductCard = props.renderProductCard
   const daiSavingsRate = useFeatureToggle('DaiSavingsRate')
 
@@ -48,6 +48,7 @@ function ProductCardsContainer(props: ProductCardsContainerProps) {
             {_productCardsData.map((cardData) => (
               <ProductCard cardData={cardData} key={cardData.ilk} />
             ))}
+            {/* @GSUpro, removing aave product card */}
             {/* {showAaveStETHETHProductCard &&
               aaveStrategyCards.map((tokenData) => (
                 <ProductCardEarnAave
