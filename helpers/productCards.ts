@@ -173,30 +173,30 @@ export const productCardsConfig: {
   descriptionLinks: {
     'ETH-A': {
       link: '/inprogress',
-      name: 'Maker (ETH-A)',
+      name: 'GSUp (ETH-A)',
     },
     'ETH-B': {
       link: '/inprogress',
-      name: 'Maker (ETH-B)',
+      name: 'GSUp (ETH-B)',
     },
     'ETH-C': {
       link: '/inprogress',
-      name: 'Maker (ETH-C)',
+      name: 'GSUp (ETH-C)',
     },
     'WBTC-A': {
       link: '/inprogress',
-      name: 'Maker (WBTC-A)',
+      name: 'GSUp (WBTC-A)',
     },
     'WBTC-B': {
       link: '/inprogress',
-      name: 'Maker (WBTC-B)',
+      name: 'GSUp (WBTC-B)',
     },
     'WBTC-C': {
       link: '/inprogress',
-      name: 'Maker (WBTC-C)',
+      name: 'GSUp (WBTC-C)',
     },
     stETHeth: {
-      link: 'https://kb.oasis.app/help/what-you-should-know-about-steth',
+      link: '/inprogress',
       name: 'AAVE stETH / ETH',
     },
   },
