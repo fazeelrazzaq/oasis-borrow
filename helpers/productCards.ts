@@ -172,33 +172,27 @@ export const productCardsConfig: {
   } as Record<string, string>,
   descriptionLinks: {
     'ETH-A': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_126274073291652792840397',
+      link: '/inprogress',
       name: 'Maker (ETH-A)',
     },
     'ETH-B': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_126274073291652792840397',
+      link: '/inprogress',
       name: 'Maker (ETH-B)',
     },
     'ETH-C': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_126274073291652792840397',
+      link: '/inprogress',
       name: 'Maker (ETH-C)',
     },
     'WBTC-A': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_884958393561652792865000',
+      link: '/inprogress',
       name: 'Maker (WBTC-A)',
     },
     'WBTC-B': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_884958393561652792865000',
+      link: '/inprogress',
       name: 'Maker (WBTC-B)',
     },
     'WBTC-C': {
-      link:
-        'https://kb.oasis.app/help/collaterals-supported-in-oasis-app#h_884958393561652792865000',
+      link: '/inprogress',
       name: 'Maker (WBTC-C)',
     },
     stETHeth: {
