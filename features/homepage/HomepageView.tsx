@@ -223,7 +223,7 @@ export function HomepageView() {
           animationDuration: '0.3s',
           animationTimingFunction: 'cubic-bezier(0.7, 0.01, 0.6, 1)',
           width: '100%',
-          mt: '126px',
+          mt: '64px',
         }}
         id="product-cards-wrapper"
       >
@@ -471,6 +471,7 @@ export function Hero({ sx, isConnected }: { sx?: SxStyleProp; isConnected: boole
           display: 'flex',
           margin: '0 auto',
           px: '40px',
+          color: 'black',
           py: 2,
           alignItems: 'center',
           '&:hover svg': {
