@@ -1,5 +1,5 @@
 import { Icon } from '@makerdao/dai-ui-icons'
-import { StatefulTooltip, StatefulTooltipWithPortal } from 'components/Tooltip'
+import { StatefulTooltipWithPortal } from 'components/Tooltip'
 import { checkIfVaultEmptyAndProtectionActive } from 'helpers/functions'
 import { WithChildren } from 'helpers/types'
 import { TFunction } from 'i18next'
