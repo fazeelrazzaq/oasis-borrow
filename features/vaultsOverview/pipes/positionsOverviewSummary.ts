@@ -116,15 +116,9 @@ export function createPositionsOverviewSummary$(
   const assetsAndPositions$: Observable<Array<PositionView>> = flattenedTokensAndPositions$.pipe(
     map((flattenedTokenBalances) =>
       flattenedTokenBalances.map((assetOrPosition) => {
-        const title =
-          assetOrPosition.token === 'DAI'
-            ? 'GSUc'
-            : assetOrPosition.token === 'MKR'
-            ? 'GSUp'
-            : assetOrPosition.token
         if (isPosition(assetOrPosition)) {
           return {
-            title,
+            title: assetOrPosition.title,
             missingPriceData: false,
             token: assetOrPosition.token,
             contentsUsd: assetOrPosition.contentsUsd,
@@ -132,7 +126,12 @@ export function createPositionsOverviewSummary$(
           }
         } else {
           return {
-            title,
+            title:
+              assetOrPosition.token === 'DAI'
+                ? 'GSUc'
+                : assetOrPosition.token === 'MKR'
+                ? 'GSUp'
+                : assetOrPosition.token,
             missingPriceData: assetOrPosition.missingPriceData,
             token: assetOrPosition.token,
             contentsUsd: assetOrPosition.balanceUsd,

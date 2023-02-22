@@ -66,7 +66,7 @@ export const tokens: TokenConfig[] = [
     coinpaprikaTicker: 'weth-weth',
     coinpaprikaFallbackTicker: 'eth-ethereum',
     gsuRatesTicker: 'eth',
-    color: '#1AAB9B',
+    color: '#000000',
     background: 'linear-gradient(133.41deg, #1AAB9B 17.25%, #22CAB7 86.54%), #FFFFFF',
     bannerIcon: staticFilesRuntimeUrl('/static/img/tokens/eth.png'),
     bannerGif: staticFilesRuntimeUrl('/static/img/tokens/eth.gif'),
@@ -134,7 +134,7 @@ export const tokens: TokenConfig[] = [
     bannerGif: '',
     tags: ['stablecoin'],
     protocol: 'GSU',
-  }
+  },
 ]
 
 // ticker comes from coinpaprika api https://api.coinpaprika.com/v1/tickers
@@ -180,7 +180,7 @@ export const ONLY_MULTIPLY_TOKENS = []
 // @GSUpro, optimization and protection disabled for all ilks
 const ALLOWED_AUTOMATION_ILKS: Record<string, string[]> = {
   main: [],
-  goerli: []
+  goerli: [],
 }
 
 export function isSupportedAutomationIlk(network: string, ilk: string) {
