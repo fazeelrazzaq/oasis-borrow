@@ -1,6 +1,6 @@
 {
-  "name": "Oasis",
-  "description": "Generate Dai on Oasis using crypto as your collateral",
+  "name": "GSUcoin",
+  "description": "Generate GSUc on GSUcoin using crypto as your collateral",
   "iconPath": "static/img/logo_v2.svg",
   "short_name": "Oasis",
   "display": "standalone",
