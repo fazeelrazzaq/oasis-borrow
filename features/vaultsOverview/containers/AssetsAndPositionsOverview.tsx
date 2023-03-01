@@ -172,7 +172,7 @@ function AssetRow(props: PositionView) {
             (${formatAmount(props.contentsUsd, 'USD')})
           </Text>
         )}
-        {props.actions && (
+        {!!props.actions?.length && (
           <Icon name="dots_v" sx={{ fill: '#708390', ml: 'auto', flexShrink: 0 }} />
         )}
         {props.url && (
