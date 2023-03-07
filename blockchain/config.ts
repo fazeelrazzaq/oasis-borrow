@@ -268,7 +268,7 @@ const goerli: NetworkConfig = {
   magicLink: {
     apiKey: '',
   },
-  cacheApi: 'https://cache-goerli-beta.gsuprotocol.io/v1',
+  cacheApi: 'https://cache-goerli-staging.gsuprotocol.io/v1',
   lidoCrvLiquidityFarmingReward: contractDesc(lidoCrvLiquidityFarmingReward, '0x00'),
   aaveTokens: {},
   aaveProtocolDataProvider: contractDesc(

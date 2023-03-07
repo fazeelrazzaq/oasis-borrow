@@ -272,8 +272,8 @@
     "minimum-sell-price": "Minimum sell price",
     "maximum-buy-price": "Maximum buy price",
     "target-multiple": "Target multiple",
-    "dsrwithdrawal": "Withdrew {{daiAmount}} DAI",
-    "dsrdeposit": "Deposited {{daiAmount}} DAI"
+    "dsrwithdrawal": "Withdrew {{daiAmount}} GSUc",
+    "dsrdeposit": "Deposited {{daiAmount}} GSUc"
   },
   "triggers": {
     "added": "added",
@@ -1826,7 +1826,7 @@
     "cancel-instructions": "To cancel the Take Profit you'll need to click the button below and confirm the transaction.",
     "adding-new-triggers-disabled": "Creation of the new Take Profit trigger is currently disabled.",
     "adding-new-triggers-disabled-description": "To protect our users, due to extreme adversarial market conditions we have currently disabled setting up NEW Take Profit triggers",
-    "auto-take-profit-confirmation-text": "You are setting an Auto-Take Profit order to trigger at an ETH price of ${{price}}. Your vault will be closed and your expected profit of ${{profit}} paid will be paid out in DAI."
+    "auto-take-profit-confirmation-text": "You are setting an Auto-Take Profit order to trigger at an ETH price of ${{price}}. Your vault will be closed and your expected profit of ${{profit}} paid will be paid out in GSUc."
   },
   "automation": {
     "setup": "{{feature}} Setup",
