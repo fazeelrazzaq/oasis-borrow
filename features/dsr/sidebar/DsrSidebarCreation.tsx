@@ -3,6 +3,7 @@ import {
   SidebarSectionStatus,
   SidebarSectionStatusProps,
 } from 'components/sidebar/SidebarSectionStatus'
+import { getEtherscanLink } from 'helpers/getEtherscanLink'
 import { getIsAllowanceStage } from 'features/allowance/allowance'
 import { DsrDepositState } from 'features/dsr/helpers/dsrDeposit'
 import { isProxyStage } from 'features/proxy/proxy'
@@ -30,7 +31,7 @@ function getTxHash(state: DsrDepositState) {
 
 function getSiderbarSectionStatus(state: DsrDepositState) {
   const { t } = useTranslation()
-  const etherscan = 'https://etherscan.io'
+  const { etherscan } = getEtherscanLink()
 
   const txHash = getTxHash(state)
 

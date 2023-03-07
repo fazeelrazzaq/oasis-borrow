@@ -1,5 +1,6 @@
 import { amountFromWei } from '@oasisdex/utils'
 import { DefinitionList } from 'components/DefinitionList'
+import { getEtherscanLink } from 'helpers/getEtherscanLink'
 import { DefaultVaultLayout } from 'components/vault/DefaultVaultLayout'
 import { DsrEvent } from 'features/dsr/helpers/dsrHistory'
 import { VaultHistoryEntry } from 'features/vaultHistory/VaultHistoryEntry'
@@ -9,7 +10,7 @@ import { Card, Heading } from 'theme-ui'
 
 function DsrHistoryView({ history }: { history?: DsrEvent[] }) {
   const { t } = useTranslation()
-  const etherscan = 'https://etherscan.io'
+  const { etherscan } = getEtherscanLink()
   const ethtx = 'https://ethtx.info'
 
   return (

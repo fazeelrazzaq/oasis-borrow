@@ -76,7 +76,7 @@ export function getHistoryEventTranslation(t: TFunction, event: VaultHistoryEven
       'coveredDebt' in event && event.coveredDebt ? formatCryptoBalance(event.coveredDebt) : 0,
     cdpId: 'cdpId' in event ? event.cdpId : undefined,
     auctionId: 'auctionId' in event ? event.auctionId : undefined,
-    token: event.token,
+    token: event.token === 'DAI' ? 'GSUc' : event.token,
   })
 }
 
