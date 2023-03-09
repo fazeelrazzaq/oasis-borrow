@@ -123,7 +123,7 @@ function VaultSuggestionsView({ productCardsData, context, address }: ViewProps)
             topContent: (
               <TabHeaderParagraph>
                 {t('landing.tabs.earn.tabParaContent')}{' '}
-                <AppLink href="/multiply" variant="inText">
+                <AppLink href="/earn" variant="inText">
                   {t('landing.tabs.earn.tabParaLinkContent')}
                 </AppLink>
               </TabHeaderParagraph>
