@@ -11,7 +11,7 @@ export const ASSETS_PAGES = [
     link: 'assets.eth.link',
     // @GSUpro, returns empty array for multiply ilks
     multiplyIlks: [],
-    borrowIlks: ['ETH-C', 'ETH-A', 'ETH-B'],
+    borrowIlks: ['ETH-A', 'ETH-B'],
   },
   // {
   //   slug: 'btc',

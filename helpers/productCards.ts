@@ -51,7 +51,7 @@ export type ProductTypes = 'borrow' | 'multiply' | 'earn'
 export type Ilk = typeof supportedIlks[number]
 export type AaveStrategy = typeof aaveStrategiesList[number]
 
-export const supportedBorrowIlks = ['ETH-A', 'ETH-B', 'ETH-C']
+export const supportedBorrowIlks = ['ETH-A', 'ETH-B']
 
 export const supportedMultiplyIlks = []
 
@@ -79,10 +79,10 @@ const genericFilters = {
 const ilkToEntryTokenMap = {
   'ETH-A': 'ETH',
   'ETH-B': 'ETH',
-  'ETH-C': 'ETH',
-  'WBTC-A': 'WBTC',
-  'WBTC-B': 'WBTC',
-  'WBTC-C': 'WBTC',
+  // 'ETH-C': 'ETH',
+  // 'WBTC-A': 'WBTC',
+  // 'WBTC-B': 'WBTC',
+  // 'WBTC-C': 'WBTC',
 }
 
 export type IlkTokenMap = { ilk: Ilk; token: string }
@@ -123,11 +123,11 @@ export const productCardsConfig: {
 } = {
   borrow: {
     cardsFilters: [genericFilters.featured, genericFilters.eth],
-    featuredIlkCards: ['ETH-C'],
+    featuredIlkCards: ['ETH-A', 'ETH-B'],
     inactiveIlks: [],
     ordering: {
-      ETH: ['ETH-C', 'ETH-A', 'ETH-B'],
-      BTC: ['WBTC-C', 'WBTC-A', 'WBTC-B'],
+      ETH: ['ETH-A', 'ETH-B'],
+      // BTC: ['WBTC-C', 'WBTC-A', 'WBTC-B'],
     },
     tags: {
       'ETH-C': 'lowest-fees-for-borrowing',
@@ -153,7 +153,7 @@ export const productCardsConfig: {
   },
   landing: {
     featuredIlkCards: {
-      borrow: ['ETH-C'],
+      borrow: ['ETH-A', 'ETH-B'],
       multiply: [],
       // TODO prepare proper handling for DSR
       earn: ['DSR'],
