@@ -1,7 +1,7 @@
 import getConfig from 'next/config'
 
 const SENTRY_DSN: string =
-  'https://0aeb6b6acb0e4aa983d31a745c6845ea@o1364656.ingest.sentry.io/4504282064617472'
+  'https://7063fe043cd441a1b9bbcfd8ed2dea73@o1364656.ingest.sentry.io/4504882039422976'
 
 const SENTRY_URL = new URL(SENTRY_DSN)
 const SENTRY_PROJECT_ID = SENTRY_URL.pathname.replace('/', '')

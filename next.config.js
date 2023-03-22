@@ -163,7 +163,7 @@ const conf = withBundleAnalyzer(
 // sentry needs to be last for accurate sourcemaps
 module.exports = withSentryConfig(conf, {
   org: 'gsu-protocol',
-  project: 'gsu-protocol-staging',
+  project: 'gsucoin-app',
   url: 'https://sentry.io/',
   silent: true,
 })

@@ -73,7 +73,7 @@ function getRpcNode(network: string) {
 function getSpotAddress(network: string) {
   switch (network) {
     case 'mainnet':
-      return `0x65C79fcB50Ca1594B025960e539eD7A9a6D434A3`
+      return `0xBe1A5F387AFd5bf41c352335c998fa15DC0E1708`
     case 'goerli':
       return `0x7C8A9bDD9DA077D5cD2141365EF1B79db98dBd82`
     default:

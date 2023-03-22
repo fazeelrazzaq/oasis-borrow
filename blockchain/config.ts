@@ -77,11 +77,7 @@ export const cropJoinIlks = []
 export const supportedIlks = [
   /* export just for test purposes */ 'ETH-A',
   'ETH-B',
-  'ETH-C',
   'DAI',
-  'WBTC-A',
-  'WBTC-B',
-  'WBTC-C',
   ...charterIlks,
   ...cropJoinIlks,
 ] as const
@@ -107,7 +103,7 @@ const protoMain = {
   infuraUrlWS: `wss://mainnet.infura.io/ws/v3/${infuraProjectId}`,
   safeConfirmations: 10,
   openVaultSafeConfirmations: 6,
-  otc: contractDesc(otc, '0x794e6e91555438aFc3ccF1c5076A74F42133d08D'),
+  otc: contractDesc(otc, '0x0000000000000000000000000000000000000000k'),
   collaterals: getCollaterals(mainnetAddresses, supportedIlks),
   tokens: tokensMainnet,
   tokensMainnet,
@@ -121,10 +117,10 @@ const protoMain = {
   mcdEnd: contractDesc(mcdEnd, mainnetAddresses.MCD_END),
   mcdSpot: contractDesc(mcdSpot, mainnetAddresses.MCD_SPOT),
   mcdDog: contractDesc(mcdDog, mainnetAddresses.MCD_DOG),
-  merkleRedeemer: contractDesc(merkleRedeemer, '0xd9fabf81Ed15ea71FBAd0C1f77529a4755a38054'),
+  merkleRedeemer: contractDesc(merkleRedeemer, '0x0000000000000000000000000000000000000000'),
   dssCharter: contractDesc(dssCharter, '0x0000123'),
   dssCdpManager: contractDesc(dssCdpManager, mainnetAddresses.CDP_MANAGER),
-  otcSupportMethods: contractDesc(otcSupport, '0x9b3f075b12513afe56ca2ed838613b7395f57839'),
+  otcSupportMethods: contractDesc(otcSupport, '0x0000000000000000000000000000000000000000'),
   vat: contractDesc(vat, mainnetAddresses.MCD_VAT),
   mcdJoinDai: contractDesc(mcdJoinDai, mainnetAddresses.MCD_JOIN_DAI),
   dsProxyRegistry: contractDesc(dsProxyRegistry, mainnetAddresses.PROXY_REGISTRY),
@@ -162,11 +158,8 @@ const protoMain = {
   ethtx: {
     url: 'https://ethtx.info/mainnet',
   },
-  taxProxyRegistries: ['0xaa63c8683647ef91b3fdab4b4989ee9588da297b'],
-  dssProxyActionsDsr: contractDesc(
-    dssProxyActionsDsr,
-    '0x07ee93aEEa0a36FfF2A9B95dd22Bd6049EE54f26',
-  ),
+  taxProxyRegistries: [mainnetAddresses.PROXY_REGISTRY],
+  dssProxyActionsDsr: contractDesc(dssProxyActionsDsr, mainnetAddresses.PROXY_ACTIONS_DSR),
   magicLink: {
     apiKey: '',
   },
