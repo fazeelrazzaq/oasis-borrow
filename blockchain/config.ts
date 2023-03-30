@@ -77,7 +77,11 @@ export const cropJoinIlks = []
 export const supportedIlks = [
   /* export just for test purposes */ 'ETH-A',
   'ETH-B',
+  'ETH-C',
   'DAI',
+  'WBTC-A',
+  'WBTC-B',
+  'WBTC-C',
   ...charterIlks,
   ...cropJoinIlks,
 ] as const
@@ -185,6 +189,7 @@ const protoMain = {
   // swapAddress: mainnetAddresses.SWAP,
   // chainlinkEthUsdPriceFeedAddress: mainnetAddresses.CHAINLINK_ETH_USD_PRICE_FEED,
 }
+
 
 export type NetworkConfig = typeof protoMain
 

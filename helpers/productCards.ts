@@ -79,7 +79,7 @@ const genericFilters = {
 const ilkToEntryTokenMap = {
   'ETH-A': 'ETH',
   'ETH-B': 'ETH',
-  // 'ETH-C': 'ETH',
+  'ETH-C': 'ETH',
   // 'WBTC-A': 'WBTC',
   // 'WBTC-B': 'WBTC',
   // 'WBTC-C': 'WBTC',
@@ -123,15 +123,15 @@ export const productCardsConfig: {
 } = {
   borrow: {
     cardsFilters: [genericFilters.featured, genericFilters.eth],
-    featuredIlkCards: ['ETH-A', 'ETH-B'],
+    featuredIlkCards: ['ETH-A', 'ETH-B', 'ETH-C'],
     inactiveIlks: [],
     ordering: {
       ETH: ['ETH-A', 'ETH-B'],
       // BTC: ['WBTC-C', 'WBTC-A', 'WBTC-B'],
     },
     tags: {
-      'ETH-C': 'lowest-fees-for-borrowing',
-      'WBTC-C': 'lowest-fees-for-borrowing',
+      'ETH-A': 'lowest-fees-for-borrowing',
+      // 'WBTC-C': 'lowest-fees-for-borrowing',
     },
   },
   multiply: {
@@ -153,7 +153,7 @@ export const productCardsConfig: {
   },
   landing: {
     featuredIlkCards: {
-      borrow: ['ETH-A', 'ETH-B'],
+      borrow: ['ETH-A', 'ETH-B', 'ETH-C'],
       multiply: [],
       // TODO prepare proper handling for DSR
       earn: ['DSR'],
