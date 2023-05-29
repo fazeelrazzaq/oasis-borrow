@@ -82,6 +82,7 @@ export const supportedIlks = [
   'WBTC-A',
   'WBTC-B',
   'WBTC-C',
+  'USDT-A',
   ...charterIlks,
   ...cropJoinIlks,
 ] as const
@@ -201,8 +202,8 @@ const goerli: NetworkConfig = {
   label: 'goerli',
   infuraUrl: goerliRpc,
   infuraUrlWS: `wss://goerli.infura.io/ws/v3/${infuraProjectId}`,
-  safeConfirmations: 6,
-  openVaultSafeConfirmations: 6,
+  safeConfirmations: 0, //6
+  openVaultSafeConfirmations: 0, //6
   otc: contractDesc(otc, '0x0000000000000000000000000000000000000000'),
   collaterals: getCollaterals(goerliAddresses, supportedIlks),
   tokens: {
@@ -266,7 +267,8 @@ const goerli: NetworkConfig = {
   magicLink: {
     apiKey: '',
   },
-  cacheApi: 'https://cache-goerli-staging.gsuprotocol.io/v1',
+  // cacheApi: 'https://cache-goerli-staging.gsuprotocol.io/v1',
+  cacheApi: 'https://cache-goerli-dev.gsuprotocol.io/v1',
   lidoCrvLiquidityFarmingReward: contractDesc(lidoCrvLiquidityFarmingReward, '0x00'),
   aaveTokens: {},
   aaveProtocolDataProvider: contractDesc(

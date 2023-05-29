@@ -226,12 +226,12 @@ export function getOverrideTriggers(events: VaultHistoryEvent[]) {
       } as VaultHistoryEvent,
       ...standaloneEvents.map(
         (item) =>
-          ({
-            ...item,
-            removeTriggerData: [unpackTriggerDataForHistory(item)],
-            eventType: 'removed',
-            autoKind: item.kind,
-          } as VaultHistoryEvent),
+        ({
+          ...item,
+          removeTriggerData: [unpackTriggerDataForHistory(item)],
+          eventType: 'removed',
+          autoKind: item.kind,
+        } as VaultHistoryEvent),
       ),
     ]
   }

@@ -68,6 +68,8 @@ export function ProductCardsFilter({
       <Box sx={{ display: ['none', 'block'] }}>
         <Flex sx={{ justifyContent: 'center', mb: 4 }}>
           {filters.map((tab) => {
+            console.log(tab.icon +
+              `_${tab.name === currentFilter || hover === tab.name ? 'color' : 'mono'}`);
             return (
               <Button variant="unStyled" onClick={() => handleTabClick(tab.name)} key={tab.name}>
                 <Flex

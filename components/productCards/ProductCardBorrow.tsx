@@ -64,10 +64,8 @@ function makeCardData(singleTokenMaxBorrow: BigNumber) {
 }
 
 function bannerValues(props: ProductCardData) {
-  const { liquidationRatio, currentCollateralPrice, balance } = props
-
+  let { liquidationRatio, currentCollateralPrice, balance } = props
   const singleTokenMaxBorrow = one.div(liquidationRatio).multipliedBy(currentCollateralPrice)
-
   if (balance?.gt(zero)) {
     return personaliseCardData({ productCardData: props, singleTokenMaxBorrow })
   }

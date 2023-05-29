@@ -19,68 +19,68 @@ import { ManageStandardBorrowVaultState, ManageVaultChange } from '../manageVaul
 
 type ProxyChange =
   | {
-      kind: 'proxyWaitingForApproval'
-    }
+    kind: 'proxyWaitingForApproval'
+  }
   | {
-      kind: 'proxyInProgress'
-      proxyTxHash: string
-    }
+    kind: 'proxyInProgress'
+    proxyTxHash: string
+  }
   | {
-      kind: 'proxyFailure'
-      txError?: TxError
-    }
+    kind: 'proxyFailure'
+    txError?: TxError
+  }
   | {
-      kind: 'proxyConfirming'
-      proxyConfirmations?: number
-    }
+    kind: 'proxyConfirming'
+    proxyConfirmations?: number
+  }
   | {
-      kind: 'proxySuccess'
-      proxyAddress: string
-    }
+    kind: 'proxySuccess'
+    proxyAddress: string
+  }
 
 type CollateralAllowanceChange =
   | { kind: 'collateralAllowanceWaitingForApproval' }
   | {
-      kind: 'collateralAllowanceInProgress'
-      collateralAllowanceTxHash: string
-    }
+    kind: 'collateralAllowanceInProgress'
+    collateralAllowanceTxHash: string
+  }
   | {
-      kind: 'collateralAllowanceFailure'
-      txError?: TxError
-    }
+    kind: 'collateralAllowanceFailure'
+    txError?: TxError
+  }
   | {
-      kind: 'collateralAllowanceSuccess'
-      collateralAllowance: BigNumber
-    }
+    kind: 'collateralAllowanceSuccess'
+    collateralAllowance: BigNumber
+  }
 
 type DaiAllowanceChange =
   | { kind: 'daiAllowanceWaitingForApproval' }
   | {
-      kind: 'daiAllowanceInProgress'
-      daiAllowanceTxHash: string
-    }
+    kind: 'daiAllowanceInProgress'
+    daiAllowanceTxHash: string
+  }
   | {
-      kind: 'daiAllowanceFailure'
-      txError?: TxError
-    }
+    kind: 'daiAllowanceFailure'
+    txError?: TxError
+  }
   | {
-      kind: 'daiAllowanceSuccess'
-      daiAllowance: BigNumber
-    }
+    kind: 'daiAllowanceSuccess'
+    daiAllowance: BigNumber
+  }
 
 type ManageChange =
   | { kind: 'manageWaitingForApproval' }
   | {
-      kind: 'manageInProgress'
-      manageTxHash: string
-    }
+    kind: 'manageInProgress'
+    manageTxHash: string
+  }
   | {
-      kind: 'manageFailure'
-      txError?: TxError
-    }
+    kind: 'manageFailure'
+    txError?: TxError
+  }
   | {
-      kind: 'manageSuccess'
-    }
+    kind: 'manageSuccess'
+  }
 
 export type ManageVaultTransactionChange =
   | ProxyChange
@@ -258,7 +258,7 @@ export function manageVaultDepositAndGenerate(
                 kind: 'manageFailure',
                 txError:
                   txState.status === TxStatus.Error ||
-                  txState.status === TxStatus.CancelledByTheUser
+                    txState.status === TxStatus.CancelledByTheUser
                     ? txState.error
                     : undefined,
               })
@@ -309,7 +309,7 @@ export function manageVaultWithdrawAndPayback(
                 kind: 'manageFailure',
                 txError:
                   txState.status === TxStatus.Error ||
-                  txState.status === TxStatus.CancelledByTheUser
+                    txState.status === TxStatus.CancelledByTheUser
                     ? txState.error
                     : undefined,
               })
@@ -349,7 +349,7 @@ export function setDaiAllowance(
                 kind: 'daiAllowanceFailure',
                 txError:
                   txState.status === TxStatus.Error ||
-                  txState.status === TxStatus.CancelledByTheUser
+                    txState.status === TxStatus.CancelledByTheUser
                     ? txState.error
                     : undefined,
               }),
@@ -388,7 +388,7 @@ export function setCollateralAllowance(
                 kind: 'collateralAllowanceFailure',
                 txError:
                   txState.status === TxStatus.Error ||
-                  txState.status === TxStatus.CancelledByTheUser
+                    txState.status === TxStatus.CancelledByTheUser
                     ? txState.error
                     : undefined,
               }),
@@ -427,7 +427,7 @@ export function createProxy(
                 kind: 'proxyFailure',
                 txError:
                   txState.status === TxStatus.Error ||
-                  txState.status === TxStatus.CancelledByTheUser
+                    txState.status === TxStatus.CancelledByTheUser
                     ? txState.error
                     : undefined,
               }),
